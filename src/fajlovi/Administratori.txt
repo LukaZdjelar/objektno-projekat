@@ -1,0 +1,2 @@
+00001|Stefan|Nastic|1604979654800|0|Novosadska 11|0602231000|89500.0|stefann|stefan123
+00002|Nikola|Lazic|0301970431800|0|Vojvode Stepe 3|0628000123|93000.0|nikolal|nikola123

@@ -1,0 +1,2 @@
+10000|Dusan|Nikolic|2905969451890|0|9. Maja 14|0627834578|52000.0|0|dusann|dusan123
+10001|Slobodan|Zivkovic|2202981345711|0|22. Oktobra 19|0617825609|49000.0|2|slobaz|slobodan123

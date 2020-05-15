@@ -1,0 +1,4 @@
+20001|Brisaci|1|3|2500.0
+20002|Bregasta osovina|0|0|4350.0
+20003|Akumulator|1|3|14500.0
+20004|Menjac|0|0|7800.0
