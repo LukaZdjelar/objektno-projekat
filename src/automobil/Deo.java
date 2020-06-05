@@ -9,7 +9,6 @@ public class Deo extends MarkaIModel {
 		this.naziv = "";
 		this.cena = 0;
 	}
-
 	public Deo(String id, Boolean izbrisan, Marka marka, Model model, String naziv, double cena) {
 		super(id, izbrisan, marka, model);
 		this.naziv = naziv;

@@ -1,2 +1,0 @@
-10000|Dusan|Nikolic|2905969451890|M|9. Maja 14|0627834578|52000.0|limar|dusann|dusan123
-10001|Aleksa|Ivanovic|2202981345711|M|22. Oktobra 19|0617825609|49000.0|auto-elektricar|aleksai|aleksa123

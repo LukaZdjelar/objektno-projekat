@@ -5,7 +5,7 @@ public class Administrator extends Osoblje {
 	public Administrator() {
 		super();
 	}
-	
+
 	public Administrator(String id, Boolean izbrisan, String ime, String prezime, String jmbg, Pol pol, String adresa, String broj_tel,
 			String kor_ime, String lozinka, double plata) {
 		super(id, izbrisan, ime, prezime, jmbg, pol, adresa, broj_tel, kor_ime, lozinka, plata);
@@ -20,8 +20,5 @@ public class Administrator extends Osoblje {
 		return "Administrator [plata=" + plata + ", ime=" + ime + ", prezime=" + prezime + ", jmbg=" + jmbg + ", pol="
 				+ pol + ", adresa=" + adresa + ", broj_tel=" + broj_tel + ", kor_ime=" + kor_ime + ", lozinka="
 				+ lozinka + ", id=" + id + ", izbrisan=" + izbrisan + "]";
-	}
-
-	
-	
+	}	
 }

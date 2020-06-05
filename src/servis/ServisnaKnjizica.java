@@ -46,6 +46,4 @@ public class ServisnaKnjizica extends Identifikacija {
 		return "ServisnaKnjizica [automobil=" + automobil + ", servisi=" + servisi + ", id=" + id + ", izbrisan="
 				+ izbrisan + "]";
 	}
-	
-	
 }

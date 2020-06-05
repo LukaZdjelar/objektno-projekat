@@ -95,9 +95,4 @@ public class Servis extends Identifikacija {
 				+ ", opis=" + opis + ", delovi=" + delovi + ", termin=" + termin + ", id=" + id + ", izbrisan="
 				+ izbrisan + "]";
 	}
-
-	
-	
-	
-
 }

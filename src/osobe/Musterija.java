@@ -32,7 +32,4 @@ public class Musterija extends Osoba {
 				+ ", pol=" + pol + ", adresa=" + adresa + ", broj_tel=" + broj_tel + ", kor_ime=" + kor_ime
 				+ ", lozinka=" + lozinka + ", id=" + id + ", izbrisan=" + izbrisan + "]";
 	}
-	
-	
-	
 }

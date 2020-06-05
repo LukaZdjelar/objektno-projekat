@@ -19,7 +19,6 @@ public class Automobil extends MarkaIModel {
 				
 	} 
 	
-	
 
 	public Automobil(String id, Boolean izbrisan, Marka marka, Model model, Musterija vlasnik, String godiste, int zapremina, int snaga,
 			Gorivo gorivo) {
@@ -81,6 +80,4 @@ public class Automobil extends MarkaIModel {
 				+ snaga + ", gorivo=" + gorivo + ", marka=" + marka + ", model=" + model + ", id=" + id + ", izbrisan="
 				+ izbrisan + "]";
 	}
-
-	
 }
