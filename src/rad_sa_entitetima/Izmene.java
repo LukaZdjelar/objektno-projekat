@@ -343,9 +343,16 @@ public class Izmene {
 	}
 	
 	public static void izmenaServisa(Servis zaMenjanje, Automobil servisiraniAuto, Serviser serviser, ArrayList<Deo> delovi, 
-									GregorianCalendar termin, Status status, String opis) {
+									GregorianCalendar termin, Status status, String opis, String id) {
 		for (Servis s : Liste.servisi) {
 			if(s.getId().equals(zaMenjanje.getId())) {
+				
+				if(id != s.getId()) {
+					zaMenjanje.setId(id);
+				}
+				else {
+					zaMenjanje.setId(s.getId());
+				}
 				
 				if(servisiraniAuto != s.getServisiraniAuto()) {
 					zaMenjanje.setServisiraniAuto(servisiraniAuto);
@@ -390,6 +397,7 @@ public class Izmene {
 				}
 				Liste.servisi.set(Liste.servisi.indexOf(s), zaMenjanje);
 				
+
 				RadSaFajlovima.PisanjeServisa(Liste.servisi);
 				RadSaFajlovima.CitanjeServis();
 				RadSaFajlovima.dostupniServisi();

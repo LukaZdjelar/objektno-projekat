@@ -1,0 +1,5 @@
+A1|Stefan|Nastic|1604979654800|0|Novosadska 11|0602231000|89500.0|stefann|stefan123|false
+A2|Nikola|Lazic|0301970431800|0|Vojvode Stepe 3|0628000123|93000.0|nikolal|nikola123|false
+A3|Mihajlo|Kecman|1406978123456|0|Kralja Petara 90|0615678134|93000.0|kecman|kecman|false
+A4|Ivana|Lazarevic|2307979123456|1|Beogradska 31|0645541009|89500.0|ivanal|ivana123|false
+A5|Jovan|Popovic|1309980123456|0|Vojvodjanska 40|0645566178|83400.0|jovan|jovan|true

@@ -20,6 +20,7 @@ import osobe.Musterija;
 import osobe.Pol;
 import osobe.Serviser;
 import osobe.Specijalizacija;
+import rad_sa_entitetima.Izmene;
 import rad_sa_entitetima.Liste;
 import servis.Servis;
 import servis.ServisnaKnjizica;
@@ -68,6 +69,26 @@ public class RadSaFajlovima {
 		return null;
 	}
 	
+	public static Musterija nadjiMusterijuKorIme(String korIme) {
+		for (Musterija musterija : CitanjeMusterija()) {
+			if(musterija.getKor_ime().equals(korIme)) {
+				return musterija;
+			}
+		}
+		
+		return null;
+	}
+	/*
+	public static Musterija nadjiMusterijuAuto(Automobil auto) {
+		for (Musterija musterija: Liste.dostupneMusterije) {
+			if (musterija.get.contains(auto)) {
+				return disk;
+			}
+		}
+		return null;
+	}
+	*/
+	
 	public static ArrayList<Automobil> CitanjeAuto() {
 		ArrayList<Automobil> automobili = new ArrayList<Automobil>();
 		try {
@@ -107,6 +128,15 @@ public class RadSaFajlovima {
 		for(Automobil automobil : CitanjeAuto()) {
 			if(automobil.getId().equals(id)) {
 				return automobil;
+			}
+		}
+		return null;
+	}
+	
+	public static Musterija nadjiVlasnikaAuto(Automobil auto) {
+		for (Musterija vlasnik: Liste.dostupneMusterije) {
+			if (vlasnik.getId().equals(auto.getVlasnik().getId())) {
+				return vlasnik;
 			}
 		}
 		return null;
@@ -153,6 +183,15 @@ public class RadSaFajlovima {
 		return null;
 	}
 	
+	public static Administrator nadjiAdministratoraKorIme(String korIme) {
+		for(Administrator administrator : CitanjeAdmin()) {
+			if(administrator.getKor_ime().equals(korIme)) {
+				return administrator;
+			}
+		}
+		return null;
+	}
+	
 	public static ArrayList<Serviser> CitanjeServiser() {
 		ArrayList<Serviser> serviseri = new ArrayList<Serviser>();
 		try {
@@ -191,6 +230,15 @@ public class RadSaFajlovima {
 	public static Serviser nadjiServisera(String id) {
 		for(Serviser serviser : CitanjeServiser()) {
 			if(serviser.getId().equals(id)) {
+				return serviser;
+			}
+		}
+		return null;
+	}
+	
+	public static Serviser nadjiServiseraKorIme(String korIme) {
+		for(Serviser serviser : CitanjeServiser()) {
+			if(serviser.getKor_ime().equals(korIme)) {
 				return serviser;
 			}
 		}
@@ -333,6 +381,44 @@ public class RadSaFajlovima {
 		return null;
 	}
 	
+	public static ArrayList<Automobil> automobiliSaSK(){
+		ArrayList<Automobil> automobiliSaSK = new ArrayList<Automobil>();
+		for (ServisnaKnjizica sk : Liste.dostupneSK){
+			for (Automobil automobil : Liste.dostupniAutomobili){
+				if(sk.getAutomobil().getId().equals(automobil.getId())) {
+					automobiliSaSK.add(automobil);
+				}
+			}
+		}
+		return automobiliSaSK;
+	}
+	
+	public static ArrayList<Automobil> automobiliBezSK() {
+		ArrayList<Automobil> automobiliBezSK = dostupniAutomobili();
+			for (Automobil automobilSa : automobiliSaSK()) {
+				int i=0;
+				if(Liste.dostupniAutomobili.contains(automobilSa)) {
+					automobiliBezSK.remove(i);
+				}
+				i++;
+			}
+		return automobiliBezSK;
+	}
+	
+	
+	public static void dodavanjeServisaSK() {
+		for (ServisnaKnjizica sk : Liste.dostupneSK) {
+			ArrayList<Servis> uradjeniServisi = new ArrayList<Servis>();
+			for (Servis servis : Liste.dostupniServisi) {
+				if(sk.getAutomobil().getId().equals(servis.getServisiraniAuto().getId())) {
+					uradjeniServisi.add(servis);
+				}
+			}
+			sk.setServisi(uradjeniServisi);
+			Izmene.izmenaSK(sk, sk.getAutomobil(), uradjeniServisi);
+		}
+	}
+	
 	public static void PisanjeMusterija(ArrayList<Musterija> musterijaLista) {
 		String sadrzaj = "";
 		for (Musterija musterija : musterijaLista) {
@@ -426,9 +512,15 @@ public class RadSaFajlovima {
 	public static void PisanjeServisa(ArrayList<Servis> servisLista) {
 		String sadrzaj = "";
 		for (Servis servis : servisLista) {
-			sadrzaj += servis.getId() + "|" + servis.getServisiraniAuto().getId() + "|" + servis.getServiser().getId() + "|" + servis.getDelovi() + "|" + 
-					Entiteti.terminFormat.format(servis.getTermin().getTime()) + "|" + servis.getStatus().ordinal() + "|" + servis.getOpis() + 
-					"|" + servis.getIzbrisan() + "\n";
+			String uDelovi = "";
+			for (Deo deo : servis.getDelovi()) {
+				uDelovi += deo.getId() + ";";
+			}
+			sadrzaj += servis.getId() + "|" + 
+			servis.getServisiraniAuto().getId() + "|" +  
+					servis.getServiser().getId() + "|" + 
+			uDelovi + "|" + 
+			Entiteti.terminFormat.format(servis.getTermin().getTime()) + "|" + servis.getStatus().ordinal() + "|" + servis.getOpis() + "|" + servis.getIzbrisan() + "\n";
 		}
 		try {
 			File fileServis = new File("src/fajlovi/Servisi.txt");
@@ -443,8 +535,12 @@ public class RadSaFajlovima {
 	public static void PisanjeSK(ArrayList<ServisnaKnjizica> SKLista) {
 		String sadrzaj = "";
 		for (ServisnaKnjizica sKnjizica : SKLista) {
-			sadrzaj += sKnjizica.getId() + "|" + sKnjizica.getAutomobil().getId() + "|" + sKnjizica.getServisi() + "|" +
-						sKnjizica.getIzbrisan() + "\n";
+			String uradjeniServisi = "";
+			for (Servis servis : sKnjizica.getServisi()) {
+				uradjeniServisi += servis.getId() + ";";
+			}
+			sadrzaj += sKnjizica.getId() + "|" + sKnjizica.getAutomobil().getId() + "|" + uradjeniServisi + "|" +
+					sKnjizica.getIzbrisan() + "\n";
 		}
 		try {
 			File fileServis = new File("src/fajlovi/ServisneKnjizice.txt");

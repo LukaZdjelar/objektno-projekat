@@ -1,0 +1,8 @@
+SK1|Auto1|Servis1;Servis2;Servis3;|false
+SK2|Auto2|Servis4;Servis5;Servis8;Servis9;|false
+SK3|Auto3||true
+SK5|Auto5||false
+SK6|Auto6||false
+SK7|Auto7||false
+SK8|Auto8||false
+SK9|Auto9|Servis7;|false

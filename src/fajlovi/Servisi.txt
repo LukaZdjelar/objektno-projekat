@@ -1,0 +1,8 @@
+Servis1|Auto1|S1|Deo1;|10.05.2020. 15:20|1|Promena brisaca|false
+Servis2|Auto1|S2|Deo4;|29.04.2020. 21:15|1|Zamena bregaste|false
+Servis3|Auto1|S2||25.05.2020. 09:20|0|Promena akumulatora|false
+Servis4|Auto2|S1||21.05.2020. 12:30|0|Promena menjaca|false
+Servis5|Auto2|S2|Deo4;|23.06.2020. 13:45|0|servis sta znam|false
+Servis7|Auto9|S3|Deo5;|12.07.2020. 15:00|0|zamena tockova|false
+Servis8|Auto2|S3|Deo4;|21.06.2020. 18:35|0|drugi opis|false
+Servis9|Auto2|S3|Deo4;|21.06.2020. 18:45|0|drugi opis|false

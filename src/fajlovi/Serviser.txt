@@ -1,0 +1,4 @@
+S1|Dusan|Nikolic|2905969451890|0|9. Maja 14|0627834578|52000.0|0|dusann|dusan123|false
+S2|Slobodan|Zivkovic|2202981345711|0|22. Oktobra 19|0617825609|49000.0|2|slobaz|slobodan123|false
+S0|Privremeno|Privremeneo|1234567890123|0|Privremeneo|12345|12345.0|0|Privremeneo|Privremeneo|true
+S3|David|Markovic|1201985123456|0|Pionirska 15|0617891234|62000.0|3|david|david|false

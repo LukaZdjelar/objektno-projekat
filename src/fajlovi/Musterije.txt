@@ -1,0 +1,4 @@
+M1|Petar|Petrovic|1805989112239|0|Njegoseva 3|0625557890|4|petarp|petar123|false
+M2|Darko|Milicic|2809789123456|0|Kosovska 1|0617786590|17|darko123|darko123|false
+M3|Teodora|Bogdanovic|120289112239|1|Vojvodjanska 23|0617891467|4|teodora|teodora123|false
+M4|Uros|Lukic|1405988123456|0|Strazilovska 25|0617891234|5|uros|uros|false
